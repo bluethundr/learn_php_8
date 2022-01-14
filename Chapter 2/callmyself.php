@@ -7,6 +7,7 @@ else
 {
 print "<html lang=\"php\"><head><title>PHP Example</title></head>";
 print "<form method='post' action='e26callmyself.php'>";
+print "Hello Tim";
 print "<input type='submit' id='submitbutton' name='submitbutton' value='Find Hello World!'/>";
 print "</form>";
 print "</body></html>";
