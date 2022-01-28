@@ -1,19 +1,19 @@
 <?php
 
-$five = 5;
-$zero = 0;
-function divbyzero($five, $zero)
+$first_num = 5;
+$second_num = 0;
+function divbyzero($first_num, $second_num)
 {
-    if (!$five || !$zero) { throw new Exception('Division by zero.'); }
-    return $five / $zero;
+    if (!$first_num || !$second_num) { throw new Exception('Division by zero.'); }
+    return $first_num / $second_num;
 }
 
 try {
-    $sum = divbyzero($five, $zero);
+    $sum = divbyzero($first_num, $second_num);
 } catch (Exception $e) {
     //print($e);
 }
 
 if (!$sum) print("There is no sum."); else {
-    print("The sum of $five divided by $zero = $sum.");
+    print("The sum of $first_num divided by $second_num = $sum.");
 }
