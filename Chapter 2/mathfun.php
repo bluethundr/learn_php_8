@@ -19,6 +19,5 @@ print("The logarithm of $log_num2 = ");
 echo(log($log_num2) . "<br>");
 print("The logarithm of $log_num3 = ");
 echo(log($log_num3) . "<br>");
-//output is 2.6457513110646
 
 
