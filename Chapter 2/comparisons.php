@@ -76,5 +76,3 @@ else if(result === 1){
 } else {
     print "$b is greater than $a";
 }
-
-print("help! I need somebody!");
