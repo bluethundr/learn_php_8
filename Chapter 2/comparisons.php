@@ -136,7 +136,3 @@ $a = 36; $b = 36;
 print "Are numbers the same using using the ternary operator: ";
 print $a == $b?"They are equal":"They are not equal";
 
-echo nl2br("\n");
-$a = 36; $b = 24;
-print "Are numbers the same using using the spaceship operator: ";
-print $a <==> $b?"They are equal":"$a is greater than $b":"$b is greater than $a";
