@@ -1,5 +1,6 @@
 <?php /** @noinspection ALL */
 echo "<div style=\"text-align: center;\"><h2>Computer fun!</h2>";
+print "Is 25 equal to 36: ";
 $a = 25; $b = 36;
 if($a == $b){
     print "$b equals $a";
@@ -9,6 +10,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is a equal to A: ";
 $a = "a"; $b = "A";
 if($a === $b){
     print "$b equals $a";
@@ -18,6 +20,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is 25 equal to 36: ";
 $a = 25; $b = 36;
 if($a != $b){
     print "$b and $a are not equal";
@@ -27,6 +30,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is A equal to a: ";
 $a = "A"; $b = "a";
 if($a !== $b){
     print "$b and $a are not equal";
@@ -36,6 +40,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is 25.1 equal to 36: ";
 $a = 25.1; $b = 36;
 if($a < $b){
     print "$a is less than $b";
@@ -45,6 +50,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is 36 = 36: ";
 $a = 36; $b = 36;
 if($a <= $b){
     print "$a is less than or equal to $b";
@@ -54,6 +60,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is 25 equal to 36: ";
 $a = 25; $b = 36;
 if($a > $b){
     print "$a is greater than $b";
@@ -63,6 +70,7 @@ else {
 }
 
 echo nl2br("\n");
+print "Is 36 equal or greater than 36: ";
 $a = 36; $b = 36;
 if($a >= $b){
     print "$a is greater than or equal to $b";
@@ -73,7 +81,7 @@ else {
 
 echo nl2br("\n");
 $a = 36; $b = 36;
-
+print "Is 36 equal to or greater than 36: ";
 $result = $a <=> $b;
 
 if($result === 0){
@@ -87,7 +95,7 @@ else if(result === 1){
 
 echo nl2br("\n");
 $a = 25; $b = 25; $c = 25; $d = 25;
-
+print "Is 25 equal to itself: ";
 if($a == $b or $c == $d){
     print "Some or all of us are equal!";
 } else {
