@@ -87,7 +87,7 @@ $result = $a <=> $b;
 if($result === 0){
     print "Both are equal";
 }
-else if(result === 1){
+else if($result === 1){
     print "$a is greater than $b";
 } else {
     print "$b is greater than $a";
@@ -95,9 +95,48 @@ else if(result === 1){
 
 echo nl2br("\n");
 $a = 25; $b = 25; $c = 25; $d = 25;
-print "Is 25 equal to itself: ";
+print "Is 25 equal to itself using OR: ";
 if($a == $b or $c == $d){
     print "Some or all of us are equal!";
 } else {
     print "We are not equal";
 }
+
+echo nl2br("\n");
+$a = 25; $b = 25; $c = 25; $d = 25;
+print "Is 25 equal to itself using AND: ";
+if($a == $b and $c == $d){
+    print "All of us are equal!";
+} else {
+    print "No one is equal";
+}
+
+echo nl2br("\n");
+$a = 25; $b = 25; $c = 25; $d = 25;
+print "Are numbers the same using xor: ";
+if($a == $b xor $c == $d){
+    print "Everyone is equal!";
+} else {
+    print "Someone is not equal";
+
+}
+
+echo nl2br("\n");
+$a = 25; $b = 25; $c = 25; $d = 25;
+print "Are numbers the same using xor (negated): ";
+if(!($a == $b xor $c == $d)){
+    print "Everyone is equal!";
+} else {
+    print "Someone is not equal";
+
+}
+
+echo nl2br("\n");
+$a = 36; $b = 36;
+print "Are numbers the same using using the ternary operator: ";
+print $a == $b?"They are equal":"They are not equal";
+
+echo nl2br("\n");
+$a = 36; $b = 24;
+print "Are numbers the same using using the spaceship operator: ";
+print $a <==> $b?"They are equal":"$a is greater than $b":"$b is greater than $a";
