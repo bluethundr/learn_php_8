@@ -1,7 +1,8 @@
 <?php
 
-function display_hello() {
-    print "Hello";
+function display_hello($value) {
+    print $value;
 }
 
-display_hello();
+$value = "Hello world!";
+display_hello($value);
