@@ -28,11 +28,26 @@ function addtwo($first_value, $second_value){
 print "$first_value plus $second_value = " . addtwo($first_value,$second_value);
 
 echo nl2br("\n\nAdd two numbers with a function and enforce integer type:\n");
-$first_value = 36;
-$second_value = 72;
+$first_value = 12;
+$second_value = 14;
 function additiontwo(int $first_value, int $second_value):
 int{
     $result = $first_value + $second_value;
     return $result;
 }
 print "$first_value plus $second_value = " . additiontwo($first_value,$second_value);
+
+echo nl2br("\n\nAdd two numbers with a function and enforce either an integer type or a float type:\n");
+$first_value = 12.1;
+$second_value = 14;
+function addingtwo(int|float $first_value, int|float $second_value): int|float
+{
+    $result = $first_value + $second_value;
+    return $result;
+}
+print "$first_value plus $second_value = " . addingtwo($first_value,$second_value);
+
+
+
+
+
