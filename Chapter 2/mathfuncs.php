@@ -1,25 +1,39 @@
-<?php
+<?php /** @noinspection ALL */
+declare(strict_types=1);
 
-    echo "<h2>Math functions</h2>";
-    echo "<p>Demonstrating how to include files.</p><br>";
-    $first_value = 12;
-    $second_value = 14;
-    try {
-        include "addtwo.php";
-        echo nl2br("$first_value + $second_value = " . addtwo($first_value, $second_value) . "\n");
+function callmathfunc(int | float $first_value, int | float $second_value, $symbol)
+{
+    switch ($symbol) {
+        case '+':
+            print "$first_value + $second_value = " . addtwo($first_value, $second_value);
+        break;
+        case '-':
+            print "$first_value - $second_value = " . subtracttwo($first_value, $second_value);
+        break;
+        case '*':
+            print "$first_value * $second_value = " . multiplytwo($first_value, $second_value);
+        break;
+        case '/':
+            print "$first_value - $second_value = " . dividetwo($first_value, $second_value);
+        break;
+        default:
+            echo nl2br("$symbol is not a valid math function.\n");
+        break;
     }
-    catch(zeroException $e)
-    { print "Error adding: $e";
-    }
-    catch(Throwable $t)
-    { Print $t->getMessage(); }
-    try {
-        print "$first_value / $second_value = " . dividetwo( 12, 14);
-    }
-    catch(zeroException $e)
-    { print "Don’t try to divide by zero!";
-    }
-    catch(Throwable $t)
-    { Print $t->getMessage(); }
-    finally
-    { echo nl2br("\n\nFun with math has concluded.\n");}
+}
+
+function addtwo(int | float $first_value, int | float $second_value) : int | float {
+    return $first_value + $second_value;
+}
+
+function subtracttwo(int | float $first_value, int | float $second_value) : int | float {
+    return $first_value - $second_value;
+}
+
+function multiplytwo(int | float $first_value, int | float $second_value) : int | float {
+    return $first_value * $second_value;
+}
+
+function dividetwo(int | float $first_value, int | float $second_value) : int | float {
+    return $first_value / $second_value;
+}
