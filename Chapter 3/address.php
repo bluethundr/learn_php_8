@@ -15,8 +15,16 @@ $address_associative_array = array(
     "Bathrooms"=>"2",
     "Address"=>"169 West Lake Shore Drive"
 );
-echo nl2br("\n");
+
+
 echo "<table>";
+echo"<table>";
+echo "<tr>";
+echo  "<td>Beds</td>";
+echo  "<td>Baths</td>";
+echo   "<td>Address</td>";
+echo "</tr>";
+echo nl2br("\n");
 foreach($address_associative_array as $key=>$row) {
     print "$key: $row";
     echo "<br>";
