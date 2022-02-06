@@ -4,15 +4,16 @@
         <td>Baths</td>
         <td>Address</td>
     </tr>
-
-    <?  $address_array = [
+    <?php
+    $address_array = [
         ['4', '2', '169 Wenona Drive']
-    ]; foreach ($address_array as $row) : ?>
-
+    ];
+    ?>
+    <?php foreach ($address_array as $row) : ?>
         <tr>
-            <td><? echo $row[0]; ?></td>
-            <td><? echo $row[1]; ?></td>
-            <td><? echo $row[2]; ?></td>
+            <td><?php echo $row[0]; ?></td>
+            <td><?php echo $row[1]; ?></td>
+            <td><?php echo $row[2]; ?></td>
         </tr>
-    <? endforeach; ?>
+    <?php endforeach ?>
 </table>
