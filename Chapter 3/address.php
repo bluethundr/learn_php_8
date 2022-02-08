@@ -1,5 +1,6 @@
 
 <?php
+
 $address_array = array(
     "4 Bedrooms",
     "2 Bathrooms",
@@ -16,6 +17,7 @@ $address_associative_array = array(
     "Address"=>"169 West Lake Shore Drive"
 );
 echo nl2br("\n");
+
 ?>
 
 <table>
@@ -24,19 +26,21 @@ echo nl2br("\n");
         <td>Baths</td>
         <td>Address</td>
     </tr>
-
     <?php
-        $address_array = [
-            ['4', '2', '169 Wenona Drive']
-    ];
+
+    $address_array = array(
+        array ('4', '2','169 Wenona Drive'),
+        array ('3', '2','38 Carmen Court'),
+        array ('2','3','1711 Springfield Ave')
+    );
+
     ?>
     <?php foreach ($address_array as $row) : ?>
-
         <tr>
             <td><?php echo $row[0]; ?></td>
             <td><?php echo $row[1]; ?></td>
             <td><?php echo $row[2]; ?></td>
         </tr>
-    <?php endforeach; ?>
+    <?php endforeach ?>
 </table>
 
