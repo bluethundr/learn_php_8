@@ -1,18 +1,28 @@
-<?php declare(strict_types=1);
-
+<?php
 
 $students = array(
       "student_id"=>"STID001",
-      "student address"=>"123 Sycamore Dr",
-      "student zip"=>"08753",
-      "student age"=> 21
+      "student_name"=>"Tim",
+      "student_address"=>"123 Sycamore Dr",
+      "student_state"=>"NJ",
+      "student_zip"=> "08753",
+      "student_age"=> 21
     );
 
-
-function print_student_info($students)  {
+function print_student_info($students)
+{
     foreach ($students as $k => $v) {
-        echo nl2br("$k : $v\n");
+        try {
+            if (is_int($v) | is_string($v)) {
+                echo nl2br("$k : $v\n");
+            }
+        }
+        catch
+            (Exception $ex) {
+                echo "An error has occurred: $ex";
+            }
     }
+
 }
 
 print_student_info($students);
