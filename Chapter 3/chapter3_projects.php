@@ -3,7 +3,8 @@
 $students = array(
       "student_id"=>"STID001",
       "student_name"=>"Tim",
-      "student_address"=>"123 Sycamore Dr",
+      "student_address"=>"960 Fairview Dr",
+      "student_town"=>"Toms River",
       "student_state"=>"NJ",
       "student_zip"=> "08753",
       "student_age"=> 21
