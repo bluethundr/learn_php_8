@@ -1,13 +1,13 @@
 <?php
 
 $students = array(
-      "student_id"=>"STID001",
+      array("student_id"=>"STID001",
       "student_name"=>"Tim",
       "student_address"=>"960 Fairview Dr",
       "student_town"=>"Toms River",
       "student_state"=>"NJ",
       "student_zip"=> "08753",
-      "student_age"=> 21
+      "student_age"=> 21)
     );
 
 function print_student_info($students)
