@@ -28,11 +28,7 @@ $students = array(
 );
 
 
-/**
- * @param array $students
- * @return void
- */
-function print_student_info(array $students)
+function print_student_info(array $students): void
 {
     foreach ($students as $student_info) {
         foreach ($student_info as $key => $value) {
@@ -40,7 +36,7 @@ function print_student_info(array $students)
                 if (!is_int($value) && !is_string($value)) {
                     throw new RuntimeException("wrong type for: " . $key);
                 }
-                 print "$key : $value" ?><br><?php
+                print "$key : $value" ?><br><?php
             } catch
             (RuntimeException $exception) {
                 echo "An error has occurred: $exception";
