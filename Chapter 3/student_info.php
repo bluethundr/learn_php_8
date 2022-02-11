@@ -37,11 +37,12 @@ function print_student_info(array $students)
     foreach ($students as $student_info) {
         foreach ($student_info as $k => $v) {
             try {
-                if (is_int($v) || is_string($v)) {
-                    echo nl2br("$k : $v\n");
+                if (!is_int($v) && !is_string($v)) {
+                    throw new RuntimeException("wrong type for: " . $k);
                 }
+                echo nl2br("$k : $v\n");
             } catch
-            (Exception $ex) {
+            (RuntimeException $ex) {
                 echo "An error has occurred: $ex";
             }
         }
