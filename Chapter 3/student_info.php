@@ -16,14 +16,6 @@ $students = array(
         "student_town"=>"Toms River",
         "student_zip"=>"08753",
         "student_age"=>24
-    ),
-    array(
-        "student_id"=>"STID003",
-        "student_name"=>"Tom",
-        "student_address"=>"1040 Fairview Dr",
-        "student_town"=>"Toms River",
-        "student_zip"=>"08753",
-        "student_age"=>26
     )
 );
 
@@ -47,6 +39,3 @@ function print_student_info($students)
 }
 
 print_student_info($students);
-
-
-
