@@ -35,18 +35,18 @@ $students = array(
 function print_student_info(array $students)
 {
     foreach ($students as $student_info) {
-        foreach ($student_info as $k => $v) {
+        foreach ($student_info as $key => $value) {
             try {
-                if (!is_int($v) && !is_string($v)) {
-                    throw new RuntimeException("wrong type for: " . $k);
+                if (!is_int($value) && !is_string($value)) {
+                    throw new RuntimeException("wrong type for: " . $key);
                 }
-                echo nl2br("$k : $v\n");
+                 print "$key : $value" ?><br><?php
             } catch
-            (RuntimeException $ex) {
-                echo "An error has occurred: $ex";
+            (RuntimeException $exception) {
+                echo "An error has occurred: $exception";
             }
         }
-        echo nl2br("\n");
+        ?><br><?php
     }
 
 }
