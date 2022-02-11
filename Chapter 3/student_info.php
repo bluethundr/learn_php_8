@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 $students = array(
     array(
@@ -16,16 +16,28 @@ $students = array(
         "student_town"=>"Toms River",
         "student_zip"=>"08753",
         "student_age"=>24
+    ),
+    array(
+        "student_id"=>"STID003",
+        "student_name"=>"Tom",
+        "student_address"=>"946 Mica Ct",
+        "student_town"=>"Toms River",
+        "student_zip"=>"08753",
+        "student_age"=>22
     )
 );
 
 
-function print_student_info($students)
+/**
+ * @param array $students
+ * @return void
+ */
+function print_student_info(array $students)
 {
     foreach ($students as $student_info) {
         foreach ($student_info as $k => $v) {
             try {
-                if (is_int($v) | is_string($v)) {
+                if (is_int($v) || is_string($v)) {
                     echo nl2br("$k : $v\n");
                 }
             } catch
