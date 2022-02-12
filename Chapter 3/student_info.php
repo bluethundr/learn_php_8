@@ -44,7 +44,6 @@ function print_student_info(array $students): void
         }
         ?><br><?php
     }
-
 }
 
 print_student_info($students);
