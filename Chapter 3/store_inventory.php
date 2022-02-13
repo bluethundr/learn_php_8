@@ -2,7 +2,7 @@
 
 // create item1 variables
 $item1_number = 10005678;
-$item1_description = "Tophat";
+$item1_description = "Cabbages";
 $item1_size = "small";
 $item1_shelf = 5;
 $item1_aisle = 12;
@@ -11,12 +11,12 @@ $item1_price = "$5.99";
 
 // create item2 variables
 $item2_number = 10005662;
-$item2_description = "T-shirt";
+$item2_description = "Milk";
 $item2_size = "large";
 $item2_shelf = 9;
 $item2_aisle = 13;
 $item2_quantity = 15;
-$item2_price = "$12.99";
+$item2_price = "$2.99";
 
 // crate array fields
 $item_fields = array("Item Number", "Item Description", "Item Size", "Item Shelf", "Item Aisle","Item Quantity","Item Price");
@@ -33,7 +33,8 @@ function create_inventory(array $items1,array $items2) : array
     foreach ($items as $items_list) {
         foreach ($items_list as $key => $item) {
             if (!is_int($item) || !is_string($item)) {
-                $inventory[$item] = $item;
+                //$inventory[$item] = $item;
+                array_push($inventory, $item);
                 echo "$key : $item";?><br><?php
             }
         }
