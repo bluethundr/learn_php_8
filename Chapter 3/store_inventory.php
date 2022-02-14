@@ -2,7 +2,7 @@
 
 // create item1 variables
 $item1_number = 10005678;
-$item1_description = "Cabbages";
+$item1_description = "Tophat";
 $item1_size = "small";
 $item1_shelf = 5;
 $item1_aisle = 12;
@@ -11,7 +11,7 @@ $item1_price = "$5.99";
 
 // create item2 variables
 $item2_number = 10005662;
-$item2_description = "Milk";
+$item2_description = "T-shirt";
 $item2_size = "large";
 $item2_shelf = 9;
 $item2_aisle = 13;
@@ -30,15 +30,11 @@ function create_inventory(array $items1,array $items2) : array
 {
     $items = array($items1, $items2);
     $inventory = array();
-    foreach ($items as $items_list) {
-        foreach ($items_list as $key => $item) {
-            if (!is_int($item) || !is_string($item)) {
-                //$inventory[$item] = $item;
-                array_push($inventory, $item);
-                echo "$key : $item";?><br><?php
-            }
+    foreach ($items as $items_list) foreach ($items_list as $key => $item) {
+        if (is_int($item) || is_string($item)) {
+            array_push($inventory, $item);
+            echo "$key : $item"; ?><br><?php
         }
-
     }
     return $inventory;
     ?><br><?php
