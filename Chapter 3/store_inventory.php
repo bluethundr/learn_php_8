@@ -27,7 +27,7 @@ $item3_aisle = 13;
 $item3_quantity = 24;
 $item3_price = "$9.99";
 
-// create item5 variables
+// create item4 variables
 $item4_number = 10005556;
 $item4_description = "Pants";
 $item4_size = null;
