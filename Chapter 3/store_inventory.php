@@ -16,7 +16,7 @@ $item2_size = "large";
 $item2_shelf = 9;
 $item2_aisle = 13;
 $item2_quantity = 15;
-$item2_price = "$12.99";
+$item2_price = "$2.99";
 
 // crate array fields
 $item_fields = array("Item Number", "Item Description", "Item Size", "Item Shelf", "Item Aisle","Item Quantity","Item Price");
@@ -30,14 +30,11 @@ function create_inventory(array $items1,array $items2) : array
 {
     $items = array($items1, $items2);
     $inventory = array();
-    foreach ($items as $items_list) {
-        foreach ($items_list as $key => $item) {
-            if (!is_int($item) || !is_string($item)) {
-                $inventory[$item] = $item;
-                echo "$key : $item";?><br><?php
-            }
+    foreach ($items as $items_list) foreach ($items_list as $key => $item) {
+        if (is_int($item) || is_string($item)) {
+            array_push($inventory, $item);
+            echo "$key : $item"; ?><br><?php
         }
-
     }
     return $inventory;
     ?><br><?php
