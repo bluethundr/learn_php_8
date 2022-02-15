@@ -44,40 +44,32 @@ $products = [
 
 ];
 
-// create inventory function creates the inventory array if the values passed to it are either integer or string
-function create_inventory(array $products) : array
+function createInventory(array $products): array
 {
-    $inventory = array();
-    foreach ($products as $product)
-    {
-        foreach ($product as $key => $item) {
-            if (is_int($item) || is_string($item)) {
-                array_push($inventory, $item);
-                echo "$key : $item";?><br><?php
-            }
+    $inventory = [];
+    foreach ($products as $product) {
+        if (isValid($product)) {
+            $inventory[] = $product;
         }
     }
-    //print_r($inventory);
+
     return $inventory;
 }
 
-function is_valid(array $product) : array
+function isValid(array $product): bool
 {
-    $inventory = array();
-    foreach ($products as $items_list) foreach ($items_list as $key => $item) {
-        if (is_int($item) || is_string($item)) {
-            array_push($inventory, $item);
-            echo "$key : $item";?><br><?php
+    foreach ($product as $productValue) {
+        if (!is_int($productValue) && !is_string($productValue)) {
+            // log, exception, print error, ...
+            return false;
         }
     }
-    //print_r($inventory);
-    return $inventory;
 
+    return true;
 }
 
-// calls the create inventory function and assigns it to the inventory array variable
-$inventory = create_inventory($products);
-
+$inventory = createInventory($products);
+//var_dump($inventory);
 // prints the contents of the inventory array
 foreach ($inventory as $key => $value) {
     print "$key : $value";?><br><?php }
