@@ -61,20 +61,6 @@ function create_inventory(array $products) : array
     return $inventory;
 }
 
-function is_valid(array $product) : array
-{
-    $inventory = array();
-    foreach ($products as $items_list) foreach ($items_list as $key => $item) {
-        if (is_int($item) || is_string($item)) {
-            array_push($inventory, $item);
-            echo "$key : $item";?><br><?php
-        }
-    }
-    //print_r($inventory);
-    return $inventory;
-
-}
-
 // calls the create inventory function and assigns it to the inventory array variable
 $inventory = create_inventory($products);
 
