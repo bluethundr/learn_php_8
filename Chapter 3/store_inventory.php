@@ -59,6 +59,7 @@ function create_inventory(array $products) : array
     return $inventory;
 }
 
+// Tests whether the $product array is valid
 function is_valid(array $product) : bool
 {
     //print 'In the is_valid function: ';
