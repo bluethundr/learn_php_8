@@ -50,7 +50,7 @@ function create_inventory(array $products) : array
     foreach ($products as $product)
     {
        if (is_valid($product)){
-           foreach ($product as $key => $value) {
+           foreach ($product as $value) {
                 $inventory[] = $value;
            }
        }
@@ -63,7 +63,7 @@ function create_inventory(array $products) : array
 function is_valid(array $product) : bool
 {
     //print 'In the is_valid function: ';
-    foreach ($product as $key => $value) {
+    foreach ($product as $value) {
         if (!is_int($value) && !is_string($value)){
             return false;
         }
