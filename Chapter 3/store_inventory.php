@@ -78,6 +78,5 @@ function is_valid(array $product) : bool
 $inventory = create_inventory($products);
 
 // prints the contents of the inventory array
-/*
 foreach ($inventory as $key => $value) {
-    print "$key : $value";?><br><?php }*/
+    print "$key : $value";?><br><?php }
