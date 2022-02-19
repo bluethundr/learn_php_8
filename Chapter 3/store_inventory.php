@@ -74,11 +74,14 @@ function is_valid(array $product) : bool
     return true;
 }
 
-// calls the create inventory function and assigns it to the inventory array variable
-$inventory = create_inventory($products);
-//print_r($inventory);
-foreach ($inventory as $product) {
-    foreach ($product as $key => $value){
-    echo "$key : $value";?><br><?php
+function print_report(array $inventory) {
+    foreach ($inventory as $product) {
+        foreach ($product as $key => $value){
+            echo "$key : $value";?><br><?php
+        }
     }
 }
+
+// calls the create inventory function and assigns it to the inventory array variable
+$inventory = create_inventory($products);
+print_report($inventory);
