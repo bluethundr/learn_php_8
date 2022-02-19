@@ -64,7 +64,6 @@ function create_inventory(array $products): array
 // Tests whether the $product array is valid
 function is_valid(array $product) : bool
 {
-    //print 'In the is_valid function: ';
     foreach ($product as $value) {
         if (!is_int($value) && !is_float($value) && !is_string($value)){
             return false;
