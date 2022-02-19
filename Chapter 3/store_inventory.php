@@ -4,7 +4,7 @@ declare(strict_types=1);
 $products = [
     [
 
-        'number' => '10005678',
+        'number' => 15678,
         'description' => 'Tophat',
         'size' => 'small',
         'shelf' => 5,
@@ -14,7 +14,7 @@ $products = [
     ],
     [
 
-        'number' => '10005662',
+        'number' => 15662,
         'description' => 'T-shirt',
         'size' => 'large',
         'shelf' => 9,
@@ -23,7 +23,7 @@ $products = [
         'price' => 2.99
     ],
     [
-        'number' => '10005342',
+        'number' => 15342,
         'description' => 'Shorts',
         'size' => 'large',
         'shelf' => 4,
@@ -32,7 +32,7 @@ $products = [
         'price' => 9.99
     ],
     [
-        'number' => '10005556',
+        'number' => 15556,
         'description' => 'Pants',
         'size' => null,
         'shelf' => null,
