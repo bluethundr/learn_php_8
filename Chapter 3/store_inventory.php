@@ -36,7 +36,7 @@ $products = [
         'description' => 'Pants',
         'size' => null,
         'shelf' => null,
-        'aisle' => 20,
+        'aisle' => null,
         'quantity' => null,
         'price' => '$24.99'
     ]
@@ -47,14 +47,13 @@ $products = [
 function create_inventory(array $products) : array
 {
     $inventory = [];
-    foreach ($products as $product)
+    foreach ($products as $key => $product)
     {
        if (is_valid($product)){
            foreach ($product as $value) {
                 $inventory[] = $value;
            }
        }
-
     }
     return $inventory;
 }
@@ -62,7 +61,6 @@ function create_inventory(array $products) : array
 // Tests whether the $product array is valid
 function is_valid(array $product) : bool
 {
-    //print 'In the is_valid function: ';
     foreach ($product as $value) {
         if (!is_int($value) && !is_string($value)){
             return false;
