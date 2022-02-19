@@ -48,13 +48,13 @@ function create_inventory(array $products): array
 {
     $inventory = [];
     // loop over your product array using the index to create an array if the product is valid.
-    foreach ($products as $product) {
+    foreach ($products as $index => $product) {
         if (is_valid($product)) {
             // Create an empty array when the product is valid.
-            //$inventory[$index] = [];
+            $inventory[$index] = [];
             // Loop over the product values and add them to the newly created array.
             foreach ($product as $key => $value) {
-                $inventory[$key] = $value;
+                $inventory[$index][$key] = $value;
             }
         }
     }
@@ -76,7 +76,9 @@ function is_valid(array $product) : bool
 
 // calls the create inventory function and assigns it to the inventory array variable
 $inventory = create_inventory($products);
-
-foreach ($inventory as $key => $value) {
+//print_r($inventory);
+foreach ($inventory as $product) {
+    foreach ($product as $key => $value){
     echo "$key : $value";?><br><?php
+    }
 }
