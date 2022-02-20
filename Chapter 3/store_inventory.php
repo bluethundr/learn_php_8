@@ -3,7 +3,6 @@
 declare(strict_types=1);
 $products = [
     [
-
         'number' => 15678,
         'description' => 'Tophat',
         'size' => 'small',
@@ -13,7 +12,6 @@ $products = [
         'price' => 5.99
     ],
     [
-
         'number' => 15662,
         'description' => 'T-shirt',
         'size' => 'large',
@@ -34,10 +32,10 @@ $products = [
     [
         'number' => 15556,
         'description' => 'Pants',
-        'size' => null,
-        'shelf' => null,
-        'aisle' => 20,
-        'quantity' => null,
+        'size' => 'Small',
+        'shelf' => 5,
+        'aisle' => 2,
+        'quantity' => 10,
         'price' => 24.99
     ],
     [
@@ -57,6 +55,7 @@ function create_inventory(array $products): array
     $inventory = [];
     // loop over your product array using the index to create an array if the product is valid.
     foreach ($products as $index => $product) {
+        //var_dump($index);
         if (is_valid($product)) {
             // Create an empty array when the product is valid.
             $inventory[$index] = [];
@@ -81,7 +80,7 @@ function is_valid(array $product) : bool
             return false;
         } elseif ($key == 'price' && ($value >=1000)) {
             return false;
-        } 
+        }
     }
     return true;
 }
@@ -89,8 +88,13 @@ function is_valid(array $product) : bool
 function print_reports(array $inventory) {
     foreach ($inventory as $product) {
         foreach ($product as $key => $value){
-            echo "$key : $value";?><br><?php
+            if ($key == 'price') {
+            echo "$key : \$$value";?><br><?php
+            } else {
+                echo "$key : $value";?><br><?php
+            }
         }
+        echo "******************";?><br><?php
     }
 }
 
