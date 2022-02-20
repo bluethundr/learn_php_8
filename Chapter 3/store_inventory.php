@@ -64,11 +64,10 @@ function create_inventory(array $products): array
 // Tests whether the $product array is valid
 function is_valid(array $product) : bool
 {
-    foreach ($product as $value) {
+    foreach ($product as $key => $value) {
         if (!is_int($value) && !is_float($value) && !is_string($value)){
             return false;
         }
-
     }
     return true;
 }
@@ -83,4 +82,5 @@ function print_report(array $inventory) {
 
 // calls the create inventory function and assigns it to the inventory array variable
 $inventory = create_inventory($products);
+// Prints the output to the screen
 print_report($inventory);
