@@ -3,49 +3,49 @@
 declare(strict_types=1);
 $products = [
     [
-        'number' => 15678,
+        'item_number' => 15678,
         'description' => 'Tophat',
         'size' => 'small',
         'shelf' => 5,
         'aisle' => 12,
-        'quantity' => 10,
+        'amount' => 10,
         'price' => 5.99
     ],
     [
-        'number' => 15662,
+        'item_number' => 15662,
         'description' => 'T-shirt',
         'size' => 'large',
         'shelf' => 9,
         'aisle' => 13,
-        'quantity' => 15,
+        'amount' => 15,
         'price' => 2.99
     ],
     [
-        'number' => 15342,
+        'item_number' => 15342,
         'description' => 'Shorts',
         'size' => 'large',
         'shelf' => 4,
         'aisle' => 13,
-        'quantity' => 24,
+        'amount' => 24,
         'price' => 9.99
     ],
     [
-        'number' => 15556,
+        'item_number' => 15556,
         'description' => 'Pants',
         'size' => 'Small',
         'shelf' => 5,
         'aisle' => 2,
-        'quantity' => 10,
+        'amount' => 10,
         'price' => 24.99
     ],
     [
-        'number' => 15557,
+        'item_number' => 15557,
         'description' => 'Belt',
         'size' => 'Large',
-        'shelf' => 5,
-        'aisle' => 16,
-        'quantity' => 10,
-        'price' => 25.00
+        'shelf' => 3,
+        'aisle' => 5,
+        'amount' => 10,
+        'price' => 10000.00
     ]
 ];
 
@@ -74,7 +74,7 @@ function is_valid(array $product) : bool
     foreach ($product as $key => $value) {
         if (!is_int($value) && !is_float($value) && !is_string($value)){
             return false;
-        } elseif ($key == 'number' && !($value >=00000 && $value <=99999)) {
+        } elseif ($key == 'item_number' && !($value >=00000 && $value <=99999)) {
             return false;
         } elseif ($key == 'aisle' && !($value >=00 && $value <=15)) {
             return false;
