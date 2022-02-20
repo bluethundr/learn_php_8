@@ -43,7 +43,7 @@ $products = [
 
 ];
 
-// create inventory function creates the inventory array if the values passed to it are either integer or string
+// create inventory function creates the inventory array if the values passed to it are either integer, float or string
 function create_inventory(array $products): array
 {
     $inventory = [];
