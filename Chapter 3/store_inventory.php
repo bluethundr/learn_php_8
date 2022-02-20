@@ -81,8 +81,7 @@ function is_valid(array $product) : bool
             return false;
         } elseif ($key == 'price' && ($value >=1000)) {
             return false;
-        } else {
-        }
+        } 
     }
     return true;
 }
@@ -96,6 +95,10 @@ function print_reports(array $inventory) {
 }
 
 // calls the create inventory function and assigns it to the inventory array variable
-$inventory = create_inventory($products);
+try {
+    $inventory = create_inventory($products);
+} catch (Exception $exception) {
+    print "Something went wrong: $exception";
+}
 // Prints the output to the screen
 print_reports($inventory);
