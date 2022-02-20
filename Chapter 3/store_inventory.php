@@ -39,8 +39,16 @@ $products = [
         'aisle' => 20,
         'quantity' => null,
         'price' => 24.99
+    ],
+    [
+        'number' => 15557,
+        'description' => 'Belt',
+        'size' => 'Large',
+        'shelf' => 5,
+        'aisle' => 16,
+        'quantity' => 10,
+        'price' => 25.00
     ]
-
 ];
 
 // create inventory function creates the inventory array if the values passed to it are either integer, float or string
@@ -67,12 +75,18 @@ function is_valid(array $product) : bool
     foreach ($product as $key => $value) {
         if (!is_int($value) && !is_float($value) && !is_string($value)){
             return false;
-        }
+        } elseif ($key == 'number' && !($value >=00000 && $value <=99999)) {
+            return false;
+        } elseif ($key == 'aisle' && !($value >=00 && $value <=15)) {
+            return false;
+        } elseif ($key == 'price' && ($value >=1000)) {
+            return false;
+        } 
     }
     return true;
 }
 
-function print_report(array $inventory) {
+function print_reports(array $inventory) {
     foreach ($inventory as $product) {
         foreach ($product as $key => $value){
             echo "$key : $value";?><br><?php
@@ -81,6 +95,10 @@ function print_report(array $inventory) {
 }
 
 // calls the create inventory function and assigns it to the inventory array variable
-$inventory = create_inventory($products);
+try {
+    $inventory = create_inventory($products);
+} catch (Exception $exception) {
+    print "Something went wrong: $exception";
+}
 // Prints the output to the screen
-print_report($inventory);
+print_reports($inventory);
