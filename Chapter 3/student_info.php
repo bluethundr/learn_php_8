@@ -51,9 +51,11 @@ function create_students(array $enrolled): array {
 
 function is_valid(array $student_info): bool {
     foreach ($student_info as $value) {
-        if (!is_int($value) && !is_string($value)){
+        try {
+            (is_int($value) && !is_string($value));
+        } catch (exception $exception) {
+            print "An exception happened: $exception";
             return false;
-            ?><br><?php
         }
     }
     return true;
