@@ -45,7 +45,7 @@ $products = [
         'shelf' => 3,
         'aisle' => 5,
         'amount' => 10,
-        'price' => 10000.00
+        'price' => 10000000.00
     ]
 ];
 
@@ -88,7 +88,7 @@ function print_reports(array $inventory) {
     foreach ($inventory as $product) {
         foreach ($product as $key => $value){
             if ($key == 'price') {
-            echo "$key : \$$value";?><br><?php
+                echo "$key : \$$value";?><br><?php
             } else {
                 echo "$key : $value";?><br><?php
             }
