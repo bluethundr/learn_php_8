@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-$students = [
+$enrolled = [
         [
             'student_id'=>'STID001',
             'student_name'=>'Tim',
@@ -27,23 +27,42 @@ $students = [
         ]
 ];
 
-
-function print_student_info(array $students): void
-{
-    foreach ($students as $student_info) {
-        foreach ($student_info as $key => $value) {
-            try {
-                if (!is_int($value) && !is_string($value)) {
-                    throw new RuntimeException('wrong type for: ' . $key);
+function create_students(array $enrolled): array {
+    $students = [];
+    foreach ($enrolled as $index => $student_info) {
+        if (is_valid($student_info)) {
+            $students[$index] = [];
+            foreach ($student_info as $key => $value) {
+                    //var_dump($value);
+                    $students[$index][$key] = $value;
                 }
-                print "$key : $value" ?><br><?php
-            } catch
-            (RuntimeException $exception) {
-                echo "An error has occurred: $exception";
             }
         }
         ?><br><?php
-    }
+    return $students;
 }
 
-print_student_info($students);
+function is_valid(array $student_info): bool {
+    foreach ($student_info as $value) {
+        if (!is_int($value) && !is_string($value)){
+            return false;
+            ?><br><?php
+    }
+  }
+    return true;
+}
+
+function print_reports(array $students) {
+    foreach($students as $student){
+        foreach($student as $key => $value) {
+            echo "$key = $value";
+            ?><br><?php
+        }
+
+        ?>***<br><?php
+    }
+
+}
+
+$students = create_students($enrolled);
+print_reports($students);
