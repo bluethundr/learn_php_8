@@ -24,7 +24,15 @@ $enrolled = [
             'student_town'=>'Toms River',
             'student_zip'=>'08753',
             'student_age'=>22
+        ],
+        [
+                'student_id'=>'STID004',
+                'student_name'=>'Petyr',
+                'student_address'=>'1072 Mica Ct',
+                'student_town'=> null,
+                'student_age'=>null
         ]
+
 ];
 
 function create_students(array $enrolled): array {
@@ -33,7 +41,6 @@ function create_students(array $enrolled): array {
         if (is_valid($student_info)) {
             $students[$index] = [];
             foreach ($student_info as $key => $value) {
-                    //var_dump($value);
                     $students[$index][$key] = $value;
                 }
             }
@@ -47,8 +54,8 @@ function is_valid(array $student_info): bool {
         if (!is_int($value) && !is_string($value)){
             return false;
             ?><br><?php
+        }
     }
-  }
     return true;
 }
 
