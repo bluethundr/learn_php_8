@@ -29,7 +29,7 @@ $enrolled = [
             'student_id'=>'STID004',
             'student_name'=>'Petyr',
             'student_address'=>'1072 Mica Ct',
-            'student_town'=> 'Toms River',
+            'student_town'=> 'Barnegat',
             'student_age'=>null
         ]
 
@@ -39,7 +39,6 @@ function create_students(array $enrolled): array {
     $students = [];
     foreach ($enrolled as $index => $student_info) {
         try {
-
             if (is_valid($student_info)) {
                 $students[$index] = [];
                 foreach ($student_info as $key => $value) {
@@ -57,20 +56,19 @@ function create_students(array $enrolled): array {
 function is_valid(array $student_info): bool {
     foreach ($student_info as $value) {
         if (!is_int($value) && !is_string($value)){
-            throw new InvalidArgumentException();
-            ?><br><?php
+            throw new InvalidArgumentException("The student value is neither an integer or a string value.");
+            ?><br><br><?php
         }
     }
     return true;
 }
 
-function print_reports(array $students) {
+function print_reports(array $students): void {
     foreach($students as $student){
         foreach($student as $key => $value) {
             echo "$key = $value";
             ?><br><?php
         }
-
         ?>***<br><?php
     }
 
