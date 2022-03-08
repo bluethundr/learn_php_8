@@ -26,11 +26,11 @@ $enrolled = [
             'student_age'=>22
         ],
         [
-                'student_id'=>'STID004',
-                'student_name'=>'Petyr',
-                'student_address'=>'1072 Mica Ct',
-                'student_town'=> null,
-                'student_age'=>null
+            'student_id'=>'STID004',
+            'student_name'=>'Petyr',
+            'student_address'=>'1072 Mica Ct',
+            'student_town'=> 'Toms River',
+            'student_age'=>null
         ]
 
 ];
@@ -38,24 +38,27 @@ $enrolled = [
 function create_students(array $enrolled): array {
     $students = [];
     foreach ($enrolled as $index => $student_info) {
-        if (is_valid($student_info)) {
-            $students[$index] = [];
-            foreach ($student_info as $key => $value) {
+        try {
+
+            if (is_valid($student_info)) {
+                $students[$index] = [];
+                foreach ($student_info as $key => $value) {
                     $students[$index][$key] = $value;
                 }
             }
+        } catch (InvalidArgumentException $e) {
+            echo $e->getMessage();
         }
+    }
         ?><br><?php
     return $students;
 }
 
 function is_valid(array $student_info): bool {
     foreach ($student_info as $value) {
-        try {
-            (is_int($value) && !is_string($value));
-        } catch (exception $exception) {
-            print "An exception happened: $exception";
-            return false;
+        if (!is_int($value) && !is_string($value)){
+            throw new InvalidArgumentException();
+            ?><br><?php
         }
     }
     return true;
