@@ -36,7 +36,7 @@ $products = [
         'shelf' => 5,
         'aisle' => 2,
         'amount' => 10,
-        'price' => 24.99
+        'price' => 5.99
     ],
     [
         'item_number' => 15557,
@@ -45,7 +45,7 @@ $products = [
         'shelf' => 3,
         'aisle' => 5,
         'amount' => 10,
-        'price' =>  2.99
+        'price' =>  4.99
     ]
 ];
 

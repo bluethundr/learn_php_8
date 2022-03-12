@@ -35,7 +35,7 @@ $products = [
         'shelf' => 5,
         'aisle' => 2,
         'amount' => 10,
-        'price' => 24.99
+        'price' => 5.99
     ],
     [
         'item_number' => 15557,
@@ -120,7 +120,9 @@ $inventory = create_inventory($products);
         </div>
     </div> 
 
-<?php make_tbl($inventory) ?>
+
 </body>
 </html>
+
+<?php make_tbl($inventory) ?>
 
