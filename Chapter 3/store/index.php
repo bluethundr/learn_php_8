@@ -120,9 +120,17 @@ $inventory = create_inventory($products);
         </div>
     </div> 
 
-
+    <style>
+        table{
+            border-collapse: 1px solid #000;
+            padding: 5px;
+        }
+        td {
+            border: 1px solid #000;
+            padding: 5px;
+        }
+    </style>
+    <?= make_tbl($inventory) ?>
 </body>
 </html>
-
-<?php make_tbl($inventory) ?>
 
