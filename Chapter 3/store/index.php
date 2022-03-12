@@ -49,11 +49,11 @@ $products = [
 ];
 
 
-function make_tbl($products)
+function make_tbl($inventory)
 {
     $tbl_array = []; // table tags need to be outside the loops
     $tbl_array[] = "<table>"; // table tags need to be outside of loops
-    foreach($products as $row) { // outer loop makes the rows
+    foreach($inventory as $row) { // outer loop makes the rows
         $tbl_array[] = "<tr>";  // tr tags need to be outside the inner loop
         foreach($row as $cell) { // inner loop makes the row cells
             $tbl_array[] = "<td>$cell</td>";
