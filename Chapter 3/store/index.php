@@ -45,6 +45,15 @@ $products = [
         'aisle' => 5,
         'amount' => 10,
         'price' =>  2.99
+    ],
+    [
+        'item_number' => 15558,
+        'description' => 'Fruit Loops',
+        'size' => 'Medium Box',
+        'shelf' => 6,
+        'aisle' => 2,
+        'amount' => 10,
+        'price' =>  2.99
     ]
 ];
 
