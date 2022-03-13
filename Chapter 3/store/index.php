@@ -57,6 +57,7 @@ $products = [
     ]
 ];
 
+$headers = ['item_number', 'description', 'size','shelf','aisle','amount','price'];
 
 function make_tbl($inventory)
 {
@@ -140,6 +141,7 @@ $inventory = create_inventory($products);
         }
     </style>
     <?= make_tbl($inventory) ?>
+
 </body>
 </html>
 
