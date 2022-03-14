@@ -1,5 +1,5 @@
 <?php 
-
+declare(strict_types=1);
 $products = [
     [
         'item_number' => 15678,
@@ -59,6 +59,7 @@ $products = [
 
 $headers = ['item_number', 'description', 'size','shelf','aisle','amount','price'];
 
+
 function make_tbl($inventory)
 {
     $tbl_array = []; // table tags need to be outside the loops
@@ -70,6 +71,7 @@ function make_tbl($inventory)
         }
         $tbl_array[] = "</tr>";
     }
+
     return implode('', $tbl_array);
 }
 
