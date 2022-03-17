@@ -46,7 +46,7 @@ function create_students(array $enrolled): array {
                 }
             }
         } catch (InvalidArgumentException $e) {
-            echo $e->getMessage();
+            echo $e->getMessage() . nl2br("\n");
         }
     }
         ?><br><?php
