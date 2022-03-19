@@ -1,4 +1,4 @@
-<?php 
+<?php
 declare(strict_types=1);
 $products = [
     [
@@ -59,22 +59,60 @@ $products = [
 
 $headers = ['item_number', 'description', 'size','shelf','aisle','amount','price'];
 
+$inventory = create_inventory($products);
 
-function make_tbl($inventory)
+
+function make_tbl(array $inventory, array $header): string
 {
-    $tbl_array = []; // table tags need to be outside the loops
-    $tbl_array[] = "<table>"; // table tags need to be outside of loops
-    foreach($inventory as $row) { // outer loop makes the rows
-        $tbl_array[] = "<tr>";  // tr tags need to be outside the inner loop
-        foreach($row as $cell) { // inner loop makes the row cells
-            $tbl_array[] = "<td>$cell</td>";
-        }
-        $tbl_array[] = "</tr>";
-    }
+    $table = "<table>";
 
-    return implode('', $tbl_array);
+    $table .= create_table_header($header);
+    $table .= create_table_body($inventory);
+
+    $table .= "</table>";
+
+    return $table;
 }
 
+function create_table_header(array $header_values): string
+{
+    $header = '<thead><tr>';
+
+    foreach ($header_values as $value) {
+        $header .= '<th>' . $value . '</th>';
+    }
+
+    $header .= '</tr></thead>';
+
+    return $header;
+}
+
+function create_table_body(array $inventory): string
+{
+    $body = '<tbody>';
+
+    foreach ($inventory as $product) {
+        $body .= create_row($product);
+    }
+
+    $body .= '</tbody>';
+
+    return $body;
+}
+
+function create_row(array $product): string
+{
+    $row = "<tr>";
+    foreach ($product as $product_attribute) {
+        $row .= "<td>$product_attribute</td>";
+    }
+    $row .= "</tr>";
+
+    return $row;
+}
+
+
+$table = make_tbl($inventory, $headers);
 
 // create inventory function creates the inventory array if the values passed to it are either integer, float or string
 function create_inventory(array $products): array
@@ -95,7 +133,7 @@ function create_inventory(array $products): array
 }
 
 // Tests whether the $product array is valid
-function is_valid(array $product) : bool
+function is_valid(array $product): bool
 {
     foreach ($product as $key => $value) {
         if (!is_int($value) && !is_float($value) && !is_string($value)){
@@ -110,11 +148,7 @@ function is_valid(array $product) : bool
     }
     return true;
 }
-
-$inventory = create_inventory($products);
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -134,7 +168,7 @@ $inventory = create_inventory($products);
 
     <style>
         table{
-            border-collapse: 1px solid #000;
+
             padding: 5px;
         }
         td {
@@ -142,8 +176,7 @@ $inventory = create_inventory($products);
             padding: 5px;
         }
     </style>
-    <?= make_tbl($inventory) ?>
+    <?= $table ?>
 
 </body>
 </html>
-
