@@ -3,39 +3,39 @@ declare(strict_types=1);
 $products = [
     [
         'item_number' => 12553,
-        'description' => 'Cabbage',
-        'size' => 'small',
+        'description' => 'Strawberries',
+        'size' => '2 lb',
         'shelf' => 5,
         'aisle' => 50,
         'amount' => 6,
-        'price' => 2.99
+        'price' => 3.20
     ],
     [
         'item_number' => 12554,
         'description' => 'Tomatoes',
-        'size' => 'small',
+        'size' => '1 lb',
         'shelf' => 9,
         'aisle' => 13,
         'amount' => 8,
-        'price' => 2.99
+        'price' => 1.91
     ],
     [
         'item_number' => 12555,
         'description' => 'T-Bone Steak',
-        'size' => 'Large',
+        'size' => '2 lb',
         'shelf' => 4,
         'aisle' => 13,
         'amount' => 24,
-        'price' => 16.99
+        'price' => 31.78
     ],
     [
         'item_number' => 12556,
         'description' => 'Cheerios',
-        'size' => 'Large Box',
+        'size' => 'Family Size',
         'shelf' => 5,
         'aisle' => 2,
         'amount' => 10,
-        'price' => 5.99
+        'price' => 4.19
     ],
     [
         'item_number' => 12557,
@@ -44,7 +44,7 @@ $products = [
         'shelf' => 3,
         'aisle' => 5,
         'amount' => 17,
-        'price' =>  2.99
+        'price' =>  3.84
     ],
     [
         'item_number' => 12558,
@@ -53,7 +53,7 @@ $products = [
         'shelf' => 6,
         'aisle' => 2,
         'amount' => 10,
-        'price' =>  2.99
+        'price' =>  4.68
     ]
 ];
 
