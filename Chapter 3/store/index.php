@@ -168,7 +168,7 @@ function is_valid(array $product): bool
 
     <style>
         table{
-
+            border-collapse: 1px solid #000;
             padding: 5px;
         }
         td {
