@@ -57,7 +57,7 @@ $products = [
     ]
 ];
 
-$headers = ['item_number', 'description', 'size','shelf','aisle','amount','price'];
+$headers = ['Item Number', 'Description', 'Size','Shelf','Aisle','Amount','Price'];
 
 $inventory = create_inventory($products);
 
