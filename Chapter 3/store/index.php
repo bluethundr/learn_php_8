@@ -2,25 +2,25 @@
 declare(strict_types=1);
 $products = [
     [
-        'item_number' => 15678,
+        'item_number' => 12553,
         'description' => 'Cabbage',
         'size' => 'small',
         'shelf' => 5,
         'aisle' => 50,
-        'amount' => 10,
+        'amount' => 6,
         'price' => 2.99
     ],
     [
-        'item_number' => 15662,
+        'item_number' => 12554,
         'description' => 'Tomatoes',
         'size' => 'small',
         'shelf' => 9,
         'aisle' => 13,
-        'amount' => 15,
+        'amount' => 8,
         'price' => 2.99
     ],
     [
-        'item_number' => 15342,
+        'item_number' => 12555,
         'description' => 'T-Bone Steak',
         'size' => 'Large',
         'shelf' => 4,
@@ -29,7 +29,7 @@ $products = [
         'price' => 16.99
     ],
     [
-        'item_number' => 15556,
+        'item_number' => 12556,
         'description' => 'Cheerios',
         'size' => 'Large Box',
         'shelf' => 5,
@@ -38,16 +38,16 @@ $products = [
         'price' => 5.99
     ],
     [
-        'item_number' => 15557,
+        'item_number' => 12557,
         'description' => 'Milk',
         'size' => 'Gallon',
         'shelf' => 3,
         'aisle' => 5,
-        'amount' => 10,
+        'amount' => 17,
         'price' =>  2.99
     ],
     [
-        'item_number' => 15558,
+        'item_number' => 12558,
         'description' => 'Fruit Loops',
         'size' => 'Medium Box',
         'shelf' => 6,
