@@ -57,11 +57,14 @@ $products = [
     ]
 ];
 
+//assignments
 $headers = ['Item Number', 'Description', 'Size','Shelf','Aisle','Amount','Price'];
 
 $inventory = create_inventory($products);
 
+$table = make_tbl($inventory, $headers);
 
+//functions
 function make_tbl(array $inventory, array $header): string
 {
     $table = "<table>";
@@ -109,14 +112,13 @@ function create_row(array $product): string
         } else {
             $row .= "<td>$product_attribute</td>";
         }
+
+        //if($key == 'price' && $key = '')
     }
     $row .= "</tr>";
 
     return $row;
 }
-
-
-$table = make_tbl($inventory, $headers);
 
 // create inventory function creates the inventory array if the values passed to it are either integer, float or string
 function create_inventory(array $products): array
