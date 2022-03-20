@@ -6,9 +6,9 @@ $products = [
         'description' => 'Strawberries',
         'size' => '2 lb',
         'shelf' => 5,
-        'aisle' => 50,
+        'aisle' => 2,
         'amount' => 6,
-        'price' => 3.20
+        'price' => 3.29
     ],
     [
         'item_number' => 12554,
@@ -24,7 +24,7 @@ $products = [
         'description' => 'T-Bone Steak',
         'size' => '2 lb',
         'shelf' => 4,
-        'aisle' => 13,
+        'aisle' => 10,
         'amount' => 24,
         'price' => 31.78
     ],
@@ -103,8 +103,12 @@ function create_table_body(array $inventory): string
 function create_row(array $product): string
 {
     $row = "<tr>";
-    foreach ($product as $product_attribute) {
-        $row .= "<td>$product_attribute</td>";
+    foreach ($product as $key => $product_attribute) {
+        if($key == 'price') {
+        $row .= "<td>\$$product_attribute</td>";
+        } else {
+            $row .= "<td>$product_attribute</td>";
+        }
     }
     $row .= "</tr>";
 
