@@ -53,7 +53,7 @@ $products = [
         'shelf' => 6,
         'aisle' => 2,
         'amount' => 10,
-        'price' =>  4.68
+        'price' =>  4.99
     ]
 ];
 
@@ -108,12 +108,10 @@ function create_row(array $product): string
     $row = "<tr>";
     foreach ($product as $key => $product_attribute) {
         if($key == 'price') {
-        $row .= "<td>\$$product_attribute</td>";
+        $row .= "<td>\$" . number_format($product_attribute, 2) . "</td>";
         } else {
             $row .= "<td>$product_attribute</td>";
         }
-
-        //if($key == 'price' && $key = '')
     }
     $row .= "</tr>";
 
