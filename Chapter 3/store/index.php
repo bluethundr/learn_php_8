@@ -117,7 +117,7 @@ function create_row(array $product): string
     $row = "<tr>";
     foreach ($product as $key => $product_attribute) {
         if($key == 'price') {
-        $row .= "<td>$" . number_format($product_attribute, 2) . "</td>";
+            $row .= "<td>$" . number_format($product_attribute, 2) . "</td>";
         } else {
             $row .= "<td>$product_attribute</td>";
         }
@@ -173,23 +173,23 @@ function is_valid(array $product): bool
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="container">
-            <a class="logo" href="#">Grocery<span>Store</span></a>
-        </div>
-    </div> 
+<div class="navbar">
+    <div class="container">
+        <a class="logo" href="#">Grocery<span>Store</span></a>
+    </div>
+</div>
 
-    <style>
-        table{
-            border-collapse: 1px solid #000;
-            padding: 5px;
-        }
-        td {
-            border: 1px solid #000;
-            padding: 5px;
-        }
-    </style>
-    <?= $table ?>
+<style>
+    table{
+        border-collapse: 1px solid #000;
+        padding: 5px;
+    }
+    td {
+        border: 1px solid #000;
+        padding: 5px;
+    }
+</style>
+<?= $table ?>
 
 </body>
 </html>
