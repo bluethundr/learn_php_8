@@ -44,7 +44,7 @@ $products = [
         'shelf' => 3,
         'aisle' => 5,
         'amount' => 17,
-        'price' =>  3.84
+        'price' =>  3.10
     ],
     [
         'item_number' => 12558,
@@ -52,8 +52,17 @@ $products = [
         'size' => 'Medium Box',
         'shelf' => 6,
         'aisle' => 2,
-        'amount' => 10,
+        'amount' => 9,
         'price' =>  4.99
+    ],
+    [
+        'item_number' => 12559,
+        'description' => 'Avocados',
+        'size' => '1 lb',
+        'shelf' => 8,
+        'aisle' => 13,
+        'amount' => 15,
+        'price' =>  2.00
     ]
 ];
 
@@ -108,7 +117,7 @@ function create_row(array $product): string
     $row = "<tr>";
     foreach ($product as $key => $product_attribute) {
         if($key == 'price') {
-        $row .= "<td>\$" . number_format($product_attribute, 2) . "</td>";
+        $row .= "<td>$" . number_format($product_attribute, 2) . "</td>";
         } else {
             $row .= "<td>$product_attribute</td>";
         }
