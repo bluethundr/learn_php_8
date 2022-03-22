@@ -37,6 +37,7 @@ if(xmlHttp.readyState == 4)
 HandleResponse(xmlHttp.responseText);
 }
 }
+xmlHttp.open("GET", "myfirstprogram.php", true);
 //xmlHttp.open("GET", "mysecondprogram.php", true);
 //xmlHttp.open("GET", "mythirdprogram.php", true);
 //xmlHttp.open("GET", "myfourthprogram.php", true);
