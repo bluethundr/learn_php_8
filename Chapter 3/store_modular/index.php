@@ -10,6 +10,8 @@ $inventory = create_inventory($products);
 
 $table = make_tbl($inventory, $headers);
 
+//test
+
 
 ?>
 
